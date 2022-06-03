@@ -9,7 +9,6 @@ double my_rand(int accuracy) {
 Neuronet::Neuronet(int num_hidden_layers_, const QVector<int> &num_neurons_)
 {
     norm = 0.002;
-    n = 0.002;
     inertion = 0.5;
 
     input = QVector<float>(num_neurons_[0] + 1, 0);

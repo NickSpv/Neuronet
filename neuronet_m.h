@@ -5,6 +5,7 @@
 #include <QVector>
 #include <math.h>
 #include <QTextStream>
+#include <QFile>
 
 class Neuronet_M
 {
@@ -16,6 +17,9 @@ public:
 
 public:
     void print_W_weight_matrix();
+    void save_weight_matrix();
+    void setNorm(float);
+    void setMomentum(float);
 
 private:
     float func_norm(float data, bool isDiff);

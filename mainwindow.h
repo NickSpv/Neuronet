@@ -4,8 +4,16 @@
 #include <QMainWindow>
 #include <QTextStream>
 #include <QFileDialog>
-#include <QRgb>
+#include <QFile>
+#include <QInputDialog>
+#include <QMessageBox>
+#include <QProgressBar>
+#include <QProgressDialog>
 #include <math.h>
+#include <fstream>
+#include <iostream>
+#include <random>
+
 #include "neuronet.h"
 #include "neuronet_m.h"
 
@@ -21,20 +29,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void generateImage(Neuronet&, int, int, int&);
-    void generateImage(Neuronet_M&, int, int, int&);
-
 private slots:
-    void on_choose_img_in_clicked();
 
-    void on_choose_img_out_clicked();
+    void on_pushButton_clicked();
 
-    void on_start_clicked();
-
-private:
-    QRgb calculate_function(int x, int y);
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
+    Neuronet_M *neuronet;
+    QVector<QPair<float, float>> borders;
 };
 #endif // MAINWINDOW_H
